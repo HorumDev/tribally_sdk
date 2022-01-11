@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import Tribally
 
-public class TriballyView: NSObject, FlutterPlatformView
+public class TriballyView: NSObject, FlutterPlatformView, UINavigationControllerDelegate
 {
 private let triballyView: TriballyViewController
 public let methodChannel: FlutterMethodChannel!
@@ -20,6 +20,8 @@ print("TriballyView init here")
                                     displayName: params["displayName"] as! String
                                     //avatar: .init(string: "Avatar image URL(optional)")
                                  ))
+    self.triballyView.view.frame = frame
+    
     //}
     self.methodChannel = FlutterMethodChannel(
       name: "tribally/tribally_veiw_\(id)",
@@ -27,11 +29,12 @@ print("TriballyView init here")
     )
 
     super.init()
-
+    self.triballyView.delegate = self
     weak var weakSelf = self
     self.methodChannel.setMethodCallHandler({ weakSelf?.handle($0, result: $1) })
 
   }
+    
 
   public func view() -> UIView {
       return self.triballyView.view
@@ -40,4 +43,8 @@ print("TriballyView init here")
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
 
   }
+    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+           print("move here")
+        }
+//    navigationController(<#T##UINavigationController#>, willShow: <#T##UIViewController#>, animated: <#T##Bool#>)
 }

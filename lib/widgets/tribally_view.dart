@@ -33,9 +33,6 @@ class TriballyView extends StatefulWidget {
 }
 
 class _TriballyViewState extends State<TriballyView> {
-  bool _isLoading = true;
-
-  //TODO add register
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +46,8 @@ class _TriballyViewState extends State<TriballyView> {
         creationParams: _creationParams(),
       );
     } else {
-      return UiKitView(
+      return
+        UiKitView(
         viewType: TriballyView._viewType,
         onPlatformViewCreated: _onPlatformViewCreated,
         gestureRecognizers: widget.gestureRecognizers,
