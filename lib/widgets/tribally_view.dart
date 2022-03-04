@@ -12,6 +12,7 @@ class TriballyView extends StatefulWidget {
     required this.uid,
     required this.projectId,
     required this.apiKey,
+    this.avatar,
     this.gestureRecognizers = const <Factory<OneSequenceGestureRecognizer>>{},
   }) : super(key: key);
 
@@ -19,6 +20,7 @@ class TriballyView extends StatefulWidget {
   final String uid;
   final String projectId;
   final String apiKey;
+  final String? avatar;
 
   /// Which gestures should be consumed by the map.
   ///
@@ -72,7 +74,8 @@ class _TriballyViewState extends State<TriballyView> {
       'displayName': widget.displayName,
       'uid': widget.uid,
       'projectId': widget.projectId,
-      'apiKey': widget.apiKey
+      'apiKey': widget.apiKey,
+      'avatar':widget.avatar
     };
 
     // return {

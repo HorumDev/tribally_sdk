@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 Tribally SDKs enable your users to create communities and bring in more people to talk about the things they love.
                        DESC
-  s.homepage         = 'http://horum.co'
+  s.homepage         = 'https://horum.co'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Horum.co' => 'contact@horum.co' }
-  s.source           = { :path => '.' }
+  s.source           = { :url => 'https://github.com/HorumDev/tribally_sdk/' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.dependency 'Tribally'

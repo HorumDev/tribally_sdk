@@ -1,15 +1,40 @@
-# tribally_sdk
+# readme
 
-Tribally SDKs enable your users to create communities and bring in more people to talk about the things they love.
+# **Launch in-app feed with a few lines of code**
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## **Integrate Tribally in under 30 min**
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Sing up in [tribally web site](https://admin.tribally.app/signup)
+2. Get your Application Keys
+    - Create a new project
+    - Head over to the Settings section and note the `Project ID`, `API Key`
+3. Add Tribally Dependency
+    - go to `pubspec.yaml`
+    - add `tribally_sdk: ^0.0.1`
 
+---
+
+## Configure TriballyView
+
+```dart
+TriballyView(
+  uid: 'YOUR_USER_TOKEN',
+  displayName: 'YOUR_USERNAME',
+  apiKey: 'YOUR_APIKEY',
+  projectId: 'YOUR_PROJECT_ID',
+	avatar: 'YOUR_USER_AVATAR_URL'
+)
+```
+
+---
+
+**Notes**
+
+- Make sure you replace the `projectId` with your Tribally `projectId` and `apiKey` with your `apiKey` in the above code.
+- As Tribally has support for adding photos, please add `Camera Usage Description` and `Photo Library Usage Description` to your `.plist` file.
+
+**Issues**
+
+Feel free to submit any issue [here](https://github.com/HorumDev/tribally_sdk/issues)

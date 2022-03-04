@@ -9,20 +9,23 @@ public let methodChannel: FlutterMethodChannel!
   public let pluginRegistrar: FlutterPluginRegistrar!
 
 public required init(id: Int64, frame: CGRect, registrar: FlutterPluginRegistrar, params: [String: Any]) {
-print("TriballyView init here")
+
     self.pluginRegistrar = registrar
-    //if params["projectId"] != nil {
+
+    var avatarUrl: URL?
+          if let avatar = params["avatar"] as? String {
+            avatarUrl = .init(string: avatar)
+          }
     self.triballyView = TriballyViewController(
                                  configuration: .init(
                                     projectId: params["projectId"] as! String,
                                     apiKey: params["apiKey"] as! String,
                                     externalId: params["uid"] as! String,
-                                    displayName: params["displayName"] as! String
-                                    //avatar: .init(string: "Avatar image URL(optional)")
+                                    displayName: params["displayName"] as! String,
+                                    avatar: avatarUrl
                                  ))
     self.triballyView.view.frame = frame
     
-    //}
     self.methodChannel = FlutterMethodChannel(
       name: "tribally/tribally_veiw_\(id)",
       binaryMessenger: registrar.messenger()
@@ -43,8 +46,5 @@ print("TriballyView init here")
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
 
   }
-    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-           print("move here")
-        }
-//    navigationController(<#T##UINavigationController#>, willShow: <#T##UIViewController#>, animated: <#T##Bool#>)
+
 }

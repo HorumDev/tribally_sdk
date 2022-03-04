@@ -9,36 +9,25 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        resizeToAvoidBottomInset: true,
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body:
-        const TriballyView(
-          uid: 'roman-cores',
-          displayName: 'Roman Cores',
-          apiKey: 'YOURS_API_KEY',
-          projectId: 'YOURS_PROJECT_ID',
-        )),
-
+          resizeToAvoidBottomInset: true,
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: const SizedBox(
+              height: 400,
+              child: TriballyView(
+                  uid: 'YOUR_USER_TOKEN',
+                  displayName: 'YOUR_USERNAME',
+                  apiKey: 'YOUR_APIKEY',
+                  projectId: 'YOUR_PROJECT_ID',
+                  avatar: 'YOUR_USER_AVATAR_URL'))),
     );
   }
 }
