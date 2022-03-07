@@ -13,7 +13,7 @@ android coming soon
     - Head over to the Settings section and note the `Project ID`, `API Key`
 3. Add Tribally Dependency
     - go to `pubspec.yaml`
-    - add `tribally_sdk: ^0.0.1`
+    - add `tribally_sdk: ^0.0.2`
 
 ---
 
