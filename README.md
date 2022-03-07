@@ -1,4 +1,5 @@
-# readme
+# IOS only
+android coming soon
 
 # **Launch in-app feed with a few lines of code**
 
