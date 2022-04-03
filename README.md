@@ -25,7 +25,7 @@ TriballyView(
   displayName: 'YOUR_USERNAME',
   apiKey: 'YOUR_APIKEY',
   projectId: 'YOUR_PROJECT_ID',
-	avatar: 'YOUR_USER_AVATAR_URL'
+  avatar: 'YOUR_USER_AVATAR_URL'
 )
 ```
 
