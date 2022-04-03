@@ -13,11 +13,13 @@ android coming soon
     - Head over to the Settings section and note the `Project ID`, `API Key`
 3. Add Tribally Dependency
     - go to `pubspec.yaml`
-    - add `tribally_sdk: ^0.0.2`
+    - add `tribally_sdk: ^0.0.3`
 
 ---
 
 ## Configure TriballyView
+
+Creating user and holding his unique uid on your side! So init TriballyView already with user UID and NAME.
 
 ```dart
 TriballyView(
@@ -27,6 +29,32 @@ TriballyView(
   projectId: 'YOUR_PROJECT_ID',
   avatar: 'YOUR_USER_AVATAR_URL'
 )
+```
+
+---
+
+# Advance use
+
+If you want to implement your custom color scheme, use color Flutter colors:
+
+```dart
+//primary color
+final Color? primary;
+
+//background color
+final Color? background;
+
+//surface color(post backgrounds)
+final Color? surface;
+
+//text color
+final Color? text;
+
+//divider color(optional)
+final Color? divider;
+
+//primary color for Dark Mode(optional)
+final Color? primaryDark;
 ```
 
 ---
