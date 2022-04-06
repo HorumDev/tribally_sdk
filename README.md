@@ -13,8 +13,11 @@ android coming soon
     - Head over to the Settings section and note the `Project ID`, `API Key`
 3. Add Tribally Dependency
     - go to `pubspec.yaml`
-    - add `tribally_sdk: ^0.0.3`
+    - add `tribally_sdk: ^0.0.4`
 
+```dart
+import 'package:tribally_sdk/tribally_sdk.dart';
+```
 ---
 
 ## Configure TriballyView
@@ -55,6 +58,19 @@ final Color? divider;
 
 //primary color for Dark Mode(optional)
 final Color? primaryDark;
+```
+
+---
+
+# Implementing Push Notifications
+
+Please google how to implement push notifications in your app. This plugin allows you to set user's pushToken in the Tribally.
+Simply call [onTriballyCreated] and
+
+```dart
+   onTriballyCreated: (TriballyController controller) {
+   controller.setPushToken('pushToken');
+   },
 ```
 
 ---

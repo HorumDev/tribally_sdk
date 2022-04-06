@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Added push notifications support
+
 ## 0.0.3
 
 * Added theme colors customizations
