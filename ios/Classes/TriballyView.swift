@@ -56,7 +56,14 @@ public required init(id: Int64, frame: CGRect, registrar: FlutterPluginRegistrar
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+  let params = call.arguments
+switch call.method {
+    case "setPushToken":
+      triballyView.setPushToken(params["deviceToken"] as! String)
+      default:
+            result(FlutterMethodNotImplemented)
 
+      }
   }
 
 }

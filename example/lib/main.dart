@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tribally_sdk/widgets/tribally_view.dart';
+import 'package:tribally_sdk/tribally_sdk.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,13 +15,17 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Plugin example app'),
           ),
-          body: const TriballyView(
-                  uid: 'roman-cores',
-                  displayName: 'Roman Cores',
-                  apiKey: 'tribally_ri673tgp-SZvWE24SLIIq1RzihgscY3l',
-                  projectId: '5f97767a-c51c-4e83-b22a-c93b34a2ad86',
-          // primary: Colors.red,
-
+          body:  TriballyView(
+              uid: 'YOUR_USER_TOKEN',
+              displayName: 'YOUR_USERNAME',
+              apiKey: 'YOUR_APIKEY',
+              projectId: 'YOUR_PROJECT_ID',
+              //optional
+              avatar: 'YOUR_USER_AVATAR_URL',
+            onTriballyCreated: (controller){
+                //add push notifications for your forum view
+                controller.setPushToken('pushToken');
+            },
           )),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of tribally_sdk;
 
 extension ColorToHexString on Color {
   toHexString(){

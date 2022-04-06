@@ -1,8 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:tribally_sdk/extentions/color_extention.dart';
+part of tribally_sdk;
 
 class TriballyView extends StatefulWidget {
   const TriballyView({
@@ -12,6 +8,7 @@ class TriballyView extends StatefulWidget {
     required this.projectId,
     required this.apiKey,
     this.avatar,
+    this.onTriballyCreated,
     this.gestureRecognizers = const <Factory<OneSequenceGestureRecognizer>>{},
     this.primary,
     this.background,
@@ -30,6 +27,8 @@ class TriballyView extends StatefulWidget {
   final String projectId;
   final String apiKey;
   final String? avatar;
+
+  final TriballyCreatedCallback? onTriballyCreated;
 
   //primary color
   final Color? primary;
@@ -74,6 +73,17 @@ class TriballyView extends StatefulWidget {
 }
 
 class _TriballyViewState extends State<TriballyView> {
+
+  final Completer<TriballyController> _controller = Completer<TriballyController>();
+
+  @override
+  Future<void> dispose() async {
+    super.dispose();
+    final controller = await _controller.future;
+
+    controller.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     //if (_isLoading) return const CircularProgressIndicator();
@@ -96,7 +106,14 @@ class _TriballyViewState extends State<TriballyView> {
     }
   }
 
-  Future<void> _onPlatformViewCreated(int id) async {}
+  Future<void> _onPlatformViewCreated(int id) async {
+    final controller = await TriballyController._init(id, this);
+    _controller.complete(controller);
+
+    if (widget.onTriballyCreated != null) {
+      widget.onTriballyCreated!(controller);
+    }
+  }
 
   Map<String, dynamic> _creationParams() {
     final settings = {
