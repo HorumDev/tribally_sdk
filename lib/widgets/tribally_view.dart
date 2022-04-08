@@ -19,7 +19,7 @@ class TriballyView extends StatefulWidget {
     this.backgroundDark,
     this.surfaceDark,
     this.textDark,
-    this.dividerDark, this.subText,
+    this.dividerDark, this.subText, this.onSurface,
   }) : super(key: key);
 
   final String displayName;
@@ -38,6 +38,9 @@ class TriballyView extends StatefulWidget {
 
   //surface color(post backgrounds)
   final Color? surface;
+
+  //onSurface color(poll backgrounds)
+  final Color? onSurface;
 
   //text color
   final Color? text;
@@ -127,8 +130,8 @@ class _TriballyViewState extends State<TriballyView> {
       'avatar': widget.avatar
     };
     final viewOptions = {
-      'primary': '#'+ (widget.primary?.toHexString() ??
-          Theme.of(context).primaryColor.toHexString()),
+      'primary': '#'+ (widget.primary?.toHexString() ?? Theme.of(context).primaryColor.toHexString()),
+      'onSurface': '#'+ (widget.onSurface?.toHexString() ?? Theme.of(context).canvasColor.toHexString()),
       'background': '#'+(widget.background?.toHexString() ??
           Theme.of(context).scaffoldBackgroundColor.toHexString()),
       'surface': '#'+(widget.surface?.toHexString() ??

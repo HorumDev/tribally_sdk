@@ -50,6 +50,9 @@ final Color? background;
 //surface color(post backgrounds)
 final Color? surface;
 
+//onSurface color(poll backgrounds)
+final Color? onSurface;
+
 //text color
 final Color? text;
 
