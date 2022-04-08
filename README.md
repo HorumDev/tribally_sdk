@@ -53,8 +53,11 @@ final Color? surface;
 //text color
 final Color? text;
 
-//divider color(optional)
-final Color? divider;
+//subText color
+final Color? subText;
+
+//icon color(optional)
+final Color? icon;
 
 //primary color for Dark Mode(optional)
 final Color? primaryDark;

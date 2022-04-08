@@ -14,12 +14,12 @@ class TriballyView extends StatefulWidget {
     this.background,
     this.surface,
     this.text,
-    this.divider,
+    this.icon,
     this.primaryDark,
     this.backgroundDark,
     this.surfaceDark,
     this.textDark,
-    this.dividerDark,
+    this.dividerDark, this.subText,
   }) : super(key: key);
 
   final String displayName;
@@ -42,8 +42,11 @@ class TriballyView extends StatefulWidget {
   //text color
   final Color? text;
 
-  //divider color(optional)
-  final Color? divider;
+  //subText color
+  final Color? subText;
+
+  //icon color(optional)
+  final Color? icon;
 
   //primary color for Dark Mode(optional)
   final Color? primaryDark;
@@ -131,7 +134,8 @@ class _TriballyViewState extends State<TriballyView> {
       'surface': '#'+(widget.surface?.toHexString() ??
           Theme.of(context).cardColor.toHexString()),
       'text': '#'+(widget.text?.toHexString() ?? Colors.black.toHexString()),
-      'divider': '#'+(widget.divider?.toHexString() ??
+      'subText': '#'+(widget.subText?.toHexString() ?? Colors.black.toHexString()),
+      'icon': '#'+(widget.icon?.toHexString() ??
           Theme.of(context).dividerColor.toHexString()),
       'primaryDark': '#'+(widget.primaryDark?.toHexString() ??
           Theme.of(context).primaryColorDark.toHexString()),

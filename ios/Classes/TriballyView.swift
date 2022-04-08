@@ -32,7 +32,8 @@ public required init(id: Int64, frame: CGRect, registrar: FlutterPluginRegistrar
                                         background: UIColor(hexString: viewOptions["background"] as! String),
                                         surface: UIColor(hexString: viewOptions["surface"] as! String),
                                         text: UIColor(hexString: viewOptions["text"] as! String),
-                                    	divider: UIColor(hexString: viewOptions["divider"] as! String),
+                                    	subText: UIColor(hexString: viewOptions["subText"] as! String),
+                                    	icon: UIColor(hexString: viewOptions["icon"] as! String),
                                     	primaryDark: UIColor(hexString: viewOptions["primaryDark"] as! String)
                                     )
                                  )

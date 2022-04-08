@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Colors refactor + new colors added
+
 ## 0.0.4
 
 * Added push notifications support
