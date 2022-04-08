@@ -20,23 +20,22 @@ public required init(id: Int64, frame: CGRect, registrar: FlutterPluginRegistrar
             avatarUrl = .init(string: avatar)
           }
     self.triballyView = TriballyViewController(
-                                 configuration: .init(
-                                    projectId: settings["projectId"] as! String,
-                                    apiKey: settings["apiKey"] as! String,
-                                    externalId: settings["uid"] as! String,
-                                    displayName: settings["displayName"] as! String,
-                                    avatar: avatarUrl
-                                    ),
-                                    themeProvider: .init(
-                                        primary: UIColor(hexString: viewOptions["primary"] as! String),
-                                        background: UIColor(hexString: viewOptions["background"] as! String),
-                                        surface: UIColor(hexString: viewOptions["surface"] as! String),
-                                        text: UIColor(hexString: viewOptions["text"] as! String),
-                                    	subText: UIColor(hexString: viewOptions["subText"] as! String),
-                                    	icon: UIColor(hexString: viewOptions["icon"] as! String),
-                                    	primaryDark: UIColor(hexString: viewOptions["primaryDark"] as! String)
-                                    )
-                                 )
+                                                               configuration: .init(
+                                                                  projectId: settings["projectId"] as! String,
+                                                                  apiKey: settings["apiKey"] as! String,
+                                                                  externalId: settings["uid"] as! String,
+                                                                  displayName: settings["displayName"] as! String,
+                                                                  avatar: avatarUrl
+                                                                  ),
+                                                                  themeProvider: .init(
+                                                                    primary: UIColor(hexString: viewOptions["primary"] as! String),
+                                                                      background: UIColor(hexString: viewOptions["background"] as! String),
+                                                                      surface: UIColor(hexString: viewOptions["surface"] as! String),
+                                                                      text: UIColor(hexString: viewOptions["text"] as! String),
+                                                                      primaryDark: UIColor(hexString: viewOptions["primaryDark"] as! String),
+                                                                      subText: UIColor(hexString: viewOptions["subText"] as! String),
+                                                                      icon: UIColor(hexString: viewOptions["icon"] as! String)
+                                                                  ))
     self.triballyView.view.frame = frame
     
     self.methodChannel = FlutterMethodChannel(

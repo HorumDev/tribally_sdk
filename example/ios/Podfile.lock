@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - Tribally (0.3.0)
+  - Tribally (0.3.7)
   - tribally_sdk (0.0.1):
     - Flutter
     - Tribally
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  Tribally: 016b66758d212117ddf613b4d06a32621bc1b5bc
+  Tribally: fd8052edb240e2478bc0fe34b0cc599d1782b26e
   tribally_sdk: eb6842da713415098b233468cde48e57e540e6f5
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
