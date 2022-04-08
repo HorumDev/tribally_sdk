@@ -19,7 +19,9 @@ class TriballyView extends StatefulWidget {
     this.backgroundDark,
     this.surfaceDark,
     this.textDark,
-    this.dividerDark, this.subText, this.onSurface,
+    this.dividerDark,
+    this.subText,
+    this.onSurface,
   }) : super(key: key);
 
   final String displayName;
@@ -79,8 +81,8 @@ class TriballyView extends StatefulWidget {
 }
 
 class _TriballyViewState extends State<TriballyView> {
-
-  final Completer<TriballyController> _controller = Completer<TriballyController>();
+  final Completer<TriballyController> _controller =
+      Completer<TriballyController>();
 
   @override
   Future<void> dispose() async {
@@ -130,18 +132,27 @@ class _TriballyViewState extends State<TriballyView> {
       'avatar': widget.avatar
     };
     final viewOptions = {
-      'primary': '#'+ (widget.primary?.toHexString() ?? Theme.of(context).primaryColor.toHexString()),
-      'onSurface': '#'+ (widget.onSurface?.toHexString() ?? Theme.of(context).canvasColor.toHexString()),
-      'background': '#'+(widget.background?.toHexString() ??
-          Theme.of(context).scaffoldBackgroundColor.toHexString()),
-      'surface': '#'+(widget.surface?.toHexString() ??
-          Theme.of(context).cardColor.toHexString()),
-      'text': '#'+(widget.text?.toHexString() ?? Colors.black.toHexString()),
-      'subText': '#'+(widget.subText?.toHexString() ?? Colors.black.toHexString()),
-      'icon': '#'+(widget.icon?.toHexString() ??
-          Theme.of(context).dividerColor.toHexString()),
-      'primaryDark': '#'+(widget.primaryDark?.toHexString() ??
-          Theme.of(context).primaryColorDark.toHexString()),
+      'primary': '#' +
+          (widget.primary?.toHexString() ??
+              Theme.of(context).primaryColor.toHexString()),
+      'onSurface': '#' +
+          (widget.onSurface?.toHexString() ??
+              Theme.of(context).canvasColor.toHexString()),
+      'background': '#' +
+          (widget.background?.toHexString() ??
+              Theme.of(context).scaffoldBackgroundColor.toHexString()),
+      'surface': '#' +
+          (widget.surface?.toHexString() ??
+              Theme.of(context).cardColor.toHexString()),
+      'text': '#' + (widget.text?.toHexString() ?? Colors.black.toHexString()),
+      'subText':
+          '#' + (widget.subText?.toHexString() ?? Colors.black.toHexString()),
+      'icon': '#' +
+          (widget.icon?.toHexString() ??
+              Theme.of(context).dividerColor.toHexString()),
+      'primaryDark': '#' +
+          (widget.primaryDark?.toHexString() ??
+              Theme.of(context).primaryColorDark.toHexString()),
       //TODO coming soon
       // 'backgroundDark': widget.backgroundDark?.value ?? Theme.of(context).primaryColorDark.value,
       // 'surfaceDark': //surface color for Dark Mode(optional),
