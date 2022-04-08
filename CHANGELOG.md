@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Colors bugfix
+
 ## 0.0.5
 
 * Colors refactor + new colors added

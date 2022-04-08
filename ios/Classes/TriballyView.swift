@@ -32,8 +32,8 @@ public class TriballyView: NSObject, FlutterPlatformView, UINavigationController
                 background: UIColor(hexString: viewOptions["background"] as! String),
                 surface: UIColor(hexString: viewOptions["surface"] as! String),
                 text: UIColor(hexString: viewOptions["text"] as! String),
-                primaryDark: UIColor(hexString: viewOptions["primaryDark"] as! String),
                 onSurface: UIColor(hexString: viewOptions["onSurface"] as! String),
+                primaryDark: UIColor(hexString: viewOptions["primaryDark"] as! String),
                 subText: UIColor(hexString: viewOptions["subText"] as! String),
                 icon: UIColor(hexString: viewOptions["icon"] as! String)
             ))
