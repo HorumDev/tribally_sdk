@@ -1,3 +1,8 @@
+## 0.1.0
+
+* Set configuration implemented - now you can change users without restarting your app
+* Added ApiProject model to easily store few Tribally projects in one app
+
 ## 0.0.6
 
 * Colors bugfix

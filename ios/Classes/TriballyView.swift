@@ -12,21 +12,22 @@ public class TriballyView: NSObject, FlutterPlatformView, UINavigationController
         
         self.pluginRegistrar = registrar
         
-        var settings = params["settings"] as! [String: Any]
+//         var settings = params["settings"] as! [String: Any]
         var viewOptions = params["viewOptions"] as! [String: Any]
         
-        var avatarUrl: URL?
-        if let avatar = settings["avatar"] as? String {
-            avatarUrl = .init(string: avatar)
-        }
+//         var avatarUrl: URL?
+//         if let avatar = settings["avatar"] as? String {
+//             avatarUrl = .init(string: avatar)
+//         }
         self.triballyView = TriballyViewController(
-            configuration: .init(
-                projectId: settings["projectId"] as! String,
-                apiKey: settings["apiKey"] as! String,
-                externalId: settings["uid"] as! String,
-                displayName: settings["displayName"] as! String,
-                avatar: avatarUrl
-            ),
+        //вынесено в отдельную часть - установка конфигурации
+//             configuration: .init(
+//                 projectId: settings["projectId"] as! String,
+//                 apiKey: settings["apiKey"] as! String,
+//                 externalId: settings["uid"] as! String,
+//                 displayName: settings["displayName"] as! String,
+//                 avatar: avatarUrl
+//             ),
             themeProvider: .init(
                 primary: UIColor(hexString: viewOptions["primary"] as! String),
                 background: UIColor(hexString: viewOptions["background"] as! String),
@@ -61,6 +62,19 @@ public class TriballyView: NSObject, FlutterPlatformView, UINavigationController
         switch call.method {
         case "setPushToken":
             triballyView.setPushToken(params["deviceToken"] as! String)
+        case "setConfiguration":
+            var avatarUrl: URL?
+                if let avatar = params["avatar"] as? String {
+                    avatarUrl = .init(string: avatar)
+                }
+            let triballyConfiguration = TriballyConfiguration(
+              projectId: params["projectId"] as! String,
+                              apiKey: params["apiKey"] as! String,
+                              externalId: params["uid"] as! String,
+                              displayName: params["displayName"] as! String,
+                              avatar: avatarUrl
+            )
+            triballyView.setConfiguration(configuration: triballyConfiguration)
         default:
             result(FlutterMethodNotImplemented)
             

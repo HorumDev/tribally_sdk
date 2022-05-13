@@ -3,11 +3,11 @@ part of tribally_sdk;
 class TriballyView extends StatefulWidget {
   const TriballyView({
     Key? key,
-    required this.displayName,
-    required this.uid,
-    required this.projectId,
-    required this.apiKey,
-    this.avatar,
+    // required this.displayName,
+    // required this.uid,
+    // required this.projectId,
+    // required this.apiKey,
+    // this.avatar,
     this.onTriballyCreated,
     this.gestureRecognizers = const <Factory<OneSequenceGestureRecognizer>>{},
     this.primary,
@@ -24,11 +24,11 @@ class TriballyView extends StatefulWidget {
     this.onSurface,
   }) : super(key: key);
 
-  final String displayName;
-  final String uid;
-  final String projectId;
-  final String apiKey;
-  final String? avatar;
+  // final String displayName;
+  // final String uid;
+  // final String projectId;
+  // final String apiKey;
+  // final String? avatar;
 
   final TriballyCreatedCallback? onTriballyCreated;
 
@@ -125,11 +125,11 @@ class _TriballyViewState extends State<TriballyView> {
 
   Map<String, dynamic> _creationParams() {
     final settings = {
-      'displayName': widget.displayName,
-      'uid': widget.uid,
-      'projectId': widget.projectId,
-      'apiKey': widget.apiKey,
-      'avatar': widget.avatar
+      // 'displayName': widget.displayName,
+      // 'uid': widget.uid,
+      // 'projectId': widget.projectId,
+      // 'apiKey': widget.apiKey,
+      // 'avatar': widget.avatar
     };
     final viewOptions = {
       'primary': '#' +

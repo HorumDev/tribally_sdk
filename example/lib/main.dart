@@ -15,16 +15,24 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Plugin example app'),
           ),
-          body:  TriballyView(
-              uid: 'YOUR_USER_TOKEN',
-              displayName: 'YOUR_USERNAME',
-              apiKey: 'YOUR_APIKEY',
-              projectId: 'YOUR_PROJECT_ID',
-              //optional
-              avatar: 'YOUR_USER_AVATAR_URL',
-            onTriballyCreated: (controller){
-                //add push notifications for your forum view
-                controller.setPushToken('pushToken');
+          body: TriballyView(
+            primary: Colors.green,
+            onSurface: Colors.orangeAccent.withOpacity(0.8),
+            text: Colors.blueGrey,
+            background: Colors.white12,
+            onTriballyCreated: (controller) {
+              //add push notifications for your forum view
+              controller.setPushToken('pushToken');
+              controller.setConfiguration(
+                uid: 'YOUR_USER_TOKEN',
+                displayName: 'YOUR_USERNAME',
+                apiProject: ApiProject(
+                  api: 'YOUR_APIKEY',
+                  id: 'YOUR_PROJECT_ID',
+                ),
+                //optional
+                avatar: 'YOUR_USER_AVATAR_URL',
+              );
             },
           )),
     );

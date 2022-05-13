@@ -10,6 +10,7 @@ part 'widgets/tribally_view.dart';
 part 'tribally_controller.dart';
 part 'extentions/color_extention.dart';
 part 'types/callbacks.dart';
+part 'types/api_key.dart';
 
 class Tribally {
   static const MethodChannel _channel = MethodChannel('tribally');

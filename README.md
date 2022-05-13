@@ -10,10 +10,10 @@ android coming soon
 1. Sing up in [tribally web site](https://admin.tribally.app/signup)
 2. Get your Application Keys
     - Create a new project
-    - Head over to the Settings section and note the `Project ID`, `API Key`
+    - Head over to the Integration section and note the `Project ID`, `API Key`
 3. Add Tribally Dependency
     - go to `pubspec.yaml`
-    - add `tribally_sdk: ^0.0.4`
+    - add `tribally_sdk: ^0.1.0`
 
 ```dart
 import 'package:tribally_sdk/tribally_sdk.dart';
@@ -26,19 +26,25 @@ Creating user and holding his unique uid on your side! So init TriballyView alre
 
 ```dart
 TriballyView(
-  uid: 'YOUR_USER_TOKEN',
-  displayName: 'YOUR_USERNAME',
-  apiKey: 'YOUR_APIKEY',
-  projectId: 'YOUR_PROJECT_ID',
-  avatar: 'YOUR_USER_AVATAR_URL'
+onTriballyCreated: (TriballyController controller) {
+  //here you can set user credentials + project keys
+  controller.setConfiguration(
+    displayName: 'user name',
+    uid: 'user token to identify',
+    apiProject: ApiProject(
+    id: 'projectId',
+    api: 'apiKey');
+    
+}
 )
 ```
+To change user in the Tribally view call [setConfiguration] again with new data
 
 ---
 
 # Advance use
 
-If you want to implement your custom color scheme, use color Flutter colors:
+If you want to implement your custom color scheme, use color Flutter colors in Tribally creation:
 
 ```dart
 //primary color
@@ -78,6 +84,7 @@ Simply call [onTriballyCreated] and
    controller.setPushToken('pushToken');
    },
 ```
+DONT FORGET TO ADD IOS PUSH CERT .p12 in IOS NOTIFICATION SECTION
 
 ---
 
